@@ -1,0 +1,19 @@
+name: Compile and release on new tag
+on:
+  push:
+    tags:
+      - '**'
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compite LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: card.tex
+          latexmk_use_xelatex: true
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v6
+        with:
+          name: PDF
+          path: card.pdf
