@@ -1,5 +1,8 @@
 name: Compile and release on new tag
-on: [tag]
+on:
+  push:
+    tags:
+      - '**'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
