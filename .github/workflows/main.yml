@@ -1,10 +1,12 @@
-name: Compile and release on new tag
+name: Build LaTeX document
 on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Compite LaTeX document
+      - name: Set up Git repository
+        uses: actions/checkout@v6
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
           root_file: card.tex
