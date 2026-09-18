@@ -13,8 +13,3 @@ jobs:
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/*.otf
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v6
-        with:
-          name: PDF
-          path: ./card.pdf
